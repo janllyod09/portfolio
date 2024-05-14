@@ -5,7 +5,6 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const halloween = useGLTF("./pumpkin-transformed.glb");
   const computer = useGLTF("./mymodel123-transformed.glb");
 
   return (
@@ -21,9 +20,9 @@ const Computers = ({ isMobile }) => {
       />
       <pointLight intensity={5} />
       <primitive
-        object={isMobile ? halloween.scene : computer.scene}
-        scale={isMobile ? 1.5 : 4}
-        position={isMobile ? [0, 1, 0] : [0, -3, -2.5]}
+        object={computer.scene}
+        scale={isMobile ? 0 : 4}
+        position={isMobile ? [0, 0, 0] : [0, -3, -2.5]}
         rotation={isMobile ? [0, 0, 0] : [-0.08, 0, 0]}
       />
     </mesh>
@@ -65,8 +64,9 @@ const ComputersCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          enablePan={false}
+        // maxPolarAngle={Math.PI / 2}
+        // minPolarAngle={Math.PI / 2}
         />
         <Computers isMobile={isMobile} />
       </Suspense>

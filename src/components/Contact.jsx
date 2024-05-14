@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
+import { PlantsCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
@@ -31,17 +31,19 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      message: form.message,
+      to_name: "Llyod",
+      to_email: "bulicjanllyod@gmail.com",  // Your email
+    };
+
     emailjs
       .send(
         'service_5yd2avs',
         'template_onecrd7',
-        {
-          from_name: form.name,
-          to_name: "Llyod",
-          from_email: form.email,
-          to_email: "bulicjanllyod@gmail.com",
-          message: form.message,
-        },
+        templateParams,
         'yxHzE3E6UoivPViJ2'
       )
       .then(
@@ -57,7 +59,7 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          console.error(error);
+          console.error("Error sending email:", error);
 
           alert("Ahh, something went wrong. Please try again.");
         }
@@ -127,7 +129,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
-        <EarthCanvas />
+        <PlantsCanvas />
       </motion.div>
     </div>
   );
