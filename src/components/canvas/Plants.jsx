@@ -22,7 +22,7 @@ const Plants = ({ isMobile }) => {
             <primitive
                 object={plants.scene}
                 scale={isMobile ? 0.7 : 0.55}
-                position={isMobile ? [0, -3, -2.2] : [0, -2.25, 0]}
+                position={isMobile ? [0, -3, 0] : [0, -2.25, 0]}
                 rotation={[0, 0, 0]}
             />
         </mesh>

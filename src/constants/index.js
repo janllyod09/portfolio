@@ -11,27 +11,29 @@ import {
   halloween,
   halloween2d,
   threejs,
+  smoke,
 } from "../assets";
+import { AboutIcon, WorkIcon, ContactIcon } from '../components/Icons';
 
 export const navLinks = [
   {
     id: "about",
-    title: "About Me",
+    icon: AboutIcon,
   },
   {
     id: "work",
-    title: "My Works",
+    icon: WorkIcon,
   },
   {
     id: "contact",
-    title: "Contact Me",
+    icon: ContactIcon,
   },
 ];
 
 const services = [
   {
     skills: "Skills",
-    title: ["Web Developer", "Game Developer"],
+    title: ["Web Development", "Game Development"],
   },
 ];
 
@@ -113,32 +115,6 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
 
 const projects = [
   {
@@ -177,27 +153,24 @@ const projects = [
     source_code_link_github: "https://github.com/janllyod09/halloween2dgame",
     source_code_link_itch: "https://janllyodgames.itch.io/halloween2d",
   },
-  // {
-  //   name: "Trip Guide",
-  //   description:
-  //     "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-  //   tags: [
-  //     {
-  //       name: "nextjs",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "supabase",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "css",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: tripguide,
-  //   source_code_link: "https://github.com/",
-  // },
+  {
+    name: "High Definition Render Pipeline (HDRP)",
+    description:
+      "3D project I made using HDRP, post-processing for the eye of Pumpkin Zombie, water surface, and lastly the fire and smoke using Visual Effect Graph.",
+    tags: [
+      {
+        name: "Unity",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "C#",
+        color: "green-text-gradient",
+      },
+    ],
+    image: smoke,
+    source_code_link_github: "https://github.com/janllyod09/smokeAndFire",
+    source_code_link_youtube: "https://youtu.be/U_Eb1ZFAbFA",
+  },
 ];
 
-export { services, services3, services4, technologies, experiences, testimonials, projects };
+export { services, services3, services4, technologies, experiences, projects };

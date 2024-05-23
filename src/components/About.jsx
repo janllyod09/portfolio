@@ -13,7 +13,7 @@ const ServiceCard = ({ index, title, skills }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full bg-border-gradient p-[2px] rounded-[20px] shadow-card'
     >
       <div
         options={{
@@ -21,7 +21,7 @@ const ServiceCard = ({ index, title, skills }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-center items-center flex-col'
+        className='bg-secondary-gradient rounded-[20px] py-5 px-12 min-h-[280px] flex justify-center items-center flex-col'
       >
         <h3 className='text-cyan-300 text-[20px] font-normal text-center mb-5'>
           {skills}
@@ -41,7 +41,7 @@ const ServiceCard3 = ({ index, language, languages }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full bg-border-gradient p-[2px] rounded-[20px] shadow-card'
     >
       <div
         options={{
@@ -49,7 +49,7 @@ const ServiceCard3 = ({ index, language, languages }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-center flex-col'
+        className='bg-secondary-gradient rounded-[20px] py-5 px-12 min-h-[280px] flex justify-center flex-col'
       >
         <h3 className='text-cyan-300 text-[20px] font-normal text-center mb-5'>
           {language}
@@ -70,7 +70,7 @@ const ServiceCard4 = ({ index, hobby, hobbies }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full bg-border-gradient p-[2px] rounded-[20px] shadow-card'
     >
       <div
         options={{
@@ -78,7 +78,7 @@ const ServiceCard4 = ({ index, hobby, hobbies }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-center flex-col'
+        className='bg-secondary-gradient rounded-[20px] py-5 px-12 min-h-[280px] flex justify-center flex-col'
       >
         <h3 className='text-cyan-300 text-[20px] font-normal text-center mb-5'>
           {hobby}

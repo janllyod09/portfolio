@@ -14,11 +14,15 @@ import workaid from "./company/workaid.png";
 import wattsaver from "./company/wattsaver.png";
 import halloween from "./halloween.png";
 import halloween2d from "./halloween2d.jpg";
+import smoke from "./smoke.png";
 import itch from "./itch.png";
+import youtube from "./youtube.png";
 
 export {
   itch,
+  youtube,
   halloween2d,
+  smoke,
   halloween,
   workaid,
   wattsaver,

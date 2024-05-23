@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github } from "../assets";
 import { itch } from "../assets";
+import { youtube } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -18,9 +19,10 @@ const ProjectCard = ({
   image,
   source_code_link_github,
   source_code_link_itch,
+  source_code_link_youtube,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="bg-secondary-gradient p-5 rounded-2xl sm:w-[360px] w-full">
       {/* <Tilt
         options={{
           max: 45,
@@ -51,11 +53,11 @@ const ProjectCard = ({
 
         <div className='absolute top-0 right-0 flex justify-end m-3 card-img_hover'>
           <div
-            onClick={() => window.open(source_code_link_itch, "_blank")}
+            onClick={() => window.open(source_code_link_youtube || source_code_link_itch, "_blank")}
             className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
           >
             <img
-              src={itch}
+              src={source_code_link_youtube ? youtube : itch}
               alt='source code'
               className='w-1/2 h-1/2 object-contain'
             />
@@ -111,6 +113,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
+
     </>
   );
 };
