@@ -17,9 +17,21 @@ import halloween2d from "./halloween2d.jpg";
 import smoke from "./smoke.png";
 import itch from "./itch.png";
 import youtube from "./youtube.png";
+import hris from "./hris.png";
+import yvip from "./yvip.jpg";
+import pmt from "./pmt.jpg";
+import apo from "./apo.jpg";
+import workaid_logo from "./workaid.jpg";
+import site from "./site.png";
 
 export {
   itch,
+  hris,
+  yvip,
+  pmt,
+  apo,
+  workaid_logo,
+  site,
   youtube,
   halloween2d,
   smoke,

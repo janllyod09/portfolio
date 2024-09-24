@@ -30,7 +30,7 @@ const Models = ({
         </motion.div>
 
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="inline-block items-center bg-secondary-gradient p-5 rounded-2xl relative w-full h-[400px]">
-          <p className={`${styles.sectionSubText} `}>Plantito</p>
+          <p className={`${styles.sectionSubText} `}>Plant</p>
           <PlantsCanvas />
         </motion.div>
       </section>

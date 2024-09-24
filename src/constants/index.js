@@ -12,6 +12,11 @@ import {
   halloween2d,
   threejs,
   smoke,
+  hris,
+  yvip,
+  pmt,
+  apo,
+  workaid_logo,
 } from "../assets";
 import { AboutIcon, WorkIcon, ContactIcon } from '../components/Icons';
 
@@ -35,16 +40,10 @@ const services = [
     skills: "Skills",
     title: ["Web Development", "Game Development"],
   },
-];
-
-const services3 = [
   {
     language: "Languages",
     languages: ["Tagalog", "English"],
   },
-];
-
-const services4 = [
   {
     hobby: "Hobbies",
     hobbies: ["Playing Games", "Exploring programming languages"],
@@ -92,9 +91,8 @@ const experiences = [
     company_name: "Wattsavers",
     icon: wattsaver,
     iconBg: "#383E56",
-    date: "February 2024 - Present",
+    date: "February 2023 - Present",
     points: [
-      "Developed using Wordpress.",
       "This company specializing in the development of government projects on a project basis.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
@@ -105,16 +103,14 @@ const experiences = [
     company_name: "Workaid",
     icon: workaid,
     iconBg: "#E6DEDD",
-    date: "February 2024 - Present",
+    date: "February 2023 - Present",
     points: [
-      "Developed using Wordpress.",
       "This website is for businesses seeking top-notch outsourcing solutions with Workaid, your ultimate partner in business elevation.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
 ];
-
 
 const projects = [
   {
@@ -124,11 +120,7 @@ const projects = [
     tags: [
       {
         name: "Unity",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "C#",
-        color: "green-text-gradient",
+        color: "orange-text-gradient",
       },
     ],
     image: halloween,
@@ -138,15 +130,11 @@ const projects = [
   {
     name: "Halloween 2D",
     description:
-      "2D Game that I developed when I was in 2nd year college. You can play it in your browser by clicking the itch at the upper-right side.",
+      "2D Game that I developed when I was in 2nd year college. You can download it in itch.io",
     tags: [
       {
         name: "Unity",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "C#",
-        color: "green-text-gradient",
+        color: "orange-text-gradient",
       },
     ],
     image: halloween2d,
@@ -160,11 +148,7 @@ const projects = [
     tags: [
       {
         name: "Unity",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "C#",
-        color: "green-text-gradient",
+        color: "orange-text-gradient",
       },
     ],
     image: smoke,
@@ -173,4 +157,89 @@ const projects = [
   },
 ];
 
-export { services, services3, services4, technologies, experiences, projects };
+const projects1 = [
+  {
+    name: "NYC - HRIS",
+    description:
+      "Web Application",
+    tags: [
+      {
+        name: "PHP",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Alpine.js",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: hris,
+    site_link: "https://lightslategrey-gull-153351.hostingersite.com/login",
+  },
+  {
+    name: "NYC - YVIP",
+    description:
+      "Web Application",
+    tags: [
+      {
+        name: "PHP",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Javascript",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: yvip,
+    site_link: "https://nyc-yvip.com/",
+  },
+  {
+    name: "Philippine Motorcycle Tourism",
+    description:
+      "Website",
+    tags: [
+      {
+        name: "WordPress",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: pmt,
+    site_link: "https://motorcycletourism.tpb.gov.ph/",
+  },
+  {
+    name: "Apo Reef Natural Park",
+    description:
+      "Website",
+    tags: [
+      {
+        name: "WordPress",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: apo,
+    site_link: "https://aporeefnaturalpark.com/",
+  },
+  {
+    name: "Workaid",
+    description:
+      "Website",
+    tags: [
+      {
+        name: "WordPress",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: workaid_logo,
+    site_link: "https://workaid.io/",
+  },
+
+];
+
+export { services, technologies, experiences, projects, projects1 };
