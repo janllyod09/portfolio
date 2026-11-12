@@ -13,6 +13,16 @@
   color-scheme: dark;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+}
+
 .star-field {
   position: absolute;
   inset: 0;

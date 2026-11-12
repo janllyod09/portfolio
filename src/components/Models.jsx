@@ -15,6 +15,9 @@ const ModelViewer = ({ label, children, delay }) => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", delay, 0.55)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
       className="inline-block items-center bg-secondary-gradient p-5 rounded-2xl relative w-full h-[400px]"
     >
       <p className={`${styles.sectionSubText}`}>{label}</p>

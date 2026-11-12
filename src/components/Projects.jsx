@@ -22,7 +22,13 @@ const ProjectCard = ({
     //   source_code_link_youtube,
 }) => {
     return (
-        <motion.div variants={fadeIn("up", "spring", Math.min(index * 0.04, 0.28), 0.55)} className="bg-secondary-gradient p-5 rounded-2xl sm:w-[360px] w-full">
+        <motion.div
+            variants={fadeIn("up", "spring", (index % 3) * 0.08, 0.55)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.18, margin: "0px 0px -8% 0px" }}
+            className="bg-secondary-gradient p-5 rounded-2xl sm:w-[360px] w-full"
+        >
             {/* <Tilt
         options={{
           max: 45,
