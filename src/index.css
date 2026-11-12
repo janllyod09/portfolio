@@ -13,6 +13,20 @@
   color-scheme: dark;
 }
 
+.star-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.58;
+  background-image:
+    radial-gradient(circle at 12% 18%, #b2ebf2 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 28%, #4dd0e1 0 1px, transparent 1.5px),
+    radial-gradient(circle at 32% 72%, #ffffff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 82%, #b2ebf2 0 1px, transparent 1.5px);
+  background-size: 180px 180px, 240px 240px, 310px 310px, 380px 380px;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

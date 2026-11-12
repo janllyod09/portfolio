@@ -1,9 +1,26 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+
+const ComputersCanvas = lazy(() => import("./canvas/Computers"));
 
 const Hero = () => {
+  const [showModel, setShowModel] = useState(false);
+
+  useEffect(() => {
+    const shouldSkipModel = window.matchMedia("(max-width: 700px), (prefers-reduced-motion: reduce)").matches;
+    if (shouldSkipModel) return undefined;
+
+    const idleCallback = window.requestIdleCallback?.(() => setShowModel(true), { timeout: 1800 });
+    const timeout = idleCallback === undefined ? window.setTimeout(() => setShowModel(true), 900) : undefined;
+
+    return () => {
+      if (idleCallback !== undefined) window.cancelIdleCallback?.(idleCallback);
+      if (timeout !== undefined) window.clearTimeout(timeout);
+    };
+  }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -23,7 +40,13 @@ const Hero = () => {
             and web applications.
           </p>
         </div>
-        <ComputersCanvas />
+        <div className="flex-1 h-full min-w-0" aria-label="Interactive 3D workstation">
+          {showModel ? (
+            <Suspense fallback={<div className="w-full h-full" aria-hidden="true" />}>
+              <ComputersCanvas />
+            </Suspense>
+          ) : null}
+        </div>
       </div>
 
 

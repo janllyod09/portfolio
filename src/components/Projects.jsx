@@ -1,11 +1,7 @@
-import React from "react";
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { site } from "../assets";
-import { itch } from "../assets";
-import { youtube } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects1 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -17,12 +13,16 @@ const ProjectCard = ({
     description,
     tags,
     image,
+    image_fit = "cover",
     site_link,
+    group,
+    shortName,
+    accent = "from-cyan-500 to-blue-600",
     //   source_code_link_itch,
     //   source_code_link_youtube,
 }) => {
     return (
-        <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="bg-secondary-gradient p-5 rounded-2xl sm:w-[360px] w-full">
+        <motion.div variants={fadeIn("up", "spring", Math.min(index * 0.04, 0.28), 0.55)} className="bg-secondary-gradient p-5 rounded-2xl sm:w-[360px] w-full">
             {/* <Tilt
         options={{
           max: 45,
@@ -32,13 +32,24 @@ const ProjectCard = ({
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'> */}
             <div className='relative w-full h-[230px]'>
 
-                <img
-                    src={image}
-                    alt='project_image'
-                    className='w-full h-full object-cover rounded-2xl'
-                />
+                {image ? (
+                    <img
+                        src={image}
+                        alt={`${name} preview`}
+                        loading="lazy"
+                        className={`w-full h-full rounded-2xl ${image_fit === "contain" ? "object-contain p-6 bg-white/95" : "object-cover"}`}
+                    />
+                ) : (
+                    <div className={`w-full h-full rounded-2xl bg-gradient-to-br ${accent} flex items-center justify-center overflow-hidden relative`}>
+                        <div className="absolute w-44 h-44 rounded-full border border-white/25" />
+                        <div className="absolute w-28 h-28 rounded-full border border-white/20" />
+                        <span className="text-white text-[70px] font-black tracking-[-0.1em] relative z-10 pr-2">
+                            {shortName || name.split(" ").map((part) => part[0]).join("").slice(0, 2)}
+                        </span>
+                    </div>
+                )}
 
-                <div className='absolute right-0 top-0 flex justify-start m-3 card-img_hover'>
+                {site_link && <div className='absolute right-0 top-0 flex justify-start m-3 card-img_hover'>
                     <div
                         onClick={() => window.open(site_link, "_blank")}
                         className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -49,7 +60,7 @@ const ProjectCard = ({
                             className='w-1/2 h-1/2 object-contain'
                         />
                     </div>
-                </div>
+                </div>}
 
                 {/* <div className='absolute top-0 right-0 flex justify-end m-3 card-img_hover'>
           <div
@@ -66,6 +77,7 @@ const ProjectCard = ({
             </div>
 
             <div className='mt-5'>
+                {group && <p className='text-cyan-400 uppercase tracking-[0.14em] text-[11px] font-semibold mb-2'>{group}</p>}
                 <h3 className='text-white font-bold text-[24px]'>{name}</h3>
                 <p className='mt-2 text-secondary text-[14px]'>{description}</p>
             </div>
@@ -91,8 +103,8 @@ const Projects = () => {
     return (
         <>
             <motion.div variants={textVariant()}>
-                <p className={`${styles.sectionSubText} `}>IT Team</p>
-                <h2 className={`${styles.sectionHeadText}`}>Wattsavers Projects.</h2>
+                <p className={`${styles.sectionSubText} `}>Work Experience</p>
+                <h2 className={`${styles.sectionHeadText}`}>Professional Projects.</h2>
             </motion.div>
 
             <div className='w-full flex'>
@@ -100,7 +112,7 @@ const Projects = () => {
                     variants={fadeIn("", "", 0.1, 1)}
                     className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
                 >
-                    As part of the IT Team at Wattsavers, here are all the websites we've made.
+                    Systems, mobile products, migrations, and public websites delivered across government and enterprise work.
                 </motion.p>
             </div>
 
